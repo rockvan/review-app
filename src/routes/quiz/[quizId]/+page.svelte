@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { bounceIn, bounceOut, elasticIn, elasticOut, quintOut } from 'svelte/easing';
+
 	import { fly, scale } from 'svelte/transition';
 
 	let currentIndex = 0;

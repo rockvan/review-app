@@ -1,13 +1,20 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-
+	import { cheers } from '$utils/cheer';
 	import { fly, scale } from 'svelte/transition';
 
 	let currentIndex = 0;
 	let selectedAnswer = '';
 	let answerSubmitted = false;
 	let score = 0;
+	let randomCheer = '';
 
+	// RandomCheer
+	function generateRandomCheer() {
+		const randomIndex = Math.floor(Math.random() * cheers.length);
+		randomCheer = cheers[randomIndex];
+	}
+	generateRandomCheer();
 	// RandomQuestion
 	let shuffledQuestions: { [key: string]: any[] } = {
 		'10-item-quiz1': shuffle($page.data.quiz1).slice(0, 10),
@@ -48,10 +55,7 @@
 				score++;
 			}
 			answerSubmitted = true;
-			console.log(answerSubmitted);
 		}
-
-		console.log(selectedAnswer);
 	}
 </script>
 
@@ -84,7 +88,7 @@
 			{#each currentQuestion.choices as choice}
 				{#key choice}
 					<button
-						class="rounded-xl border-2 border-amber-400 p-2 text-start"
+						class="rounded-xl border-2 border-amber-400 bg-slate-800 p-2 text-start"
 						class:selected={selectedAnswer === choice}
 						on:click={() => checkAnswer(choice)}
 						in:fly={{ y: 100, duration: 800, delay: 300 }}
@@ -103,7 +107,10 @@
 	<div class="grid place-content-center gap-10 text-center">
 		<!-- Quiz Completed -->
 		{#if currentIndex >= shuffledQuestions10.length && (($page.params.quizId === '10-item-quiz1' && currentIndex >= shuffledQuestions10.length) || ($page.params.quizId === '25-item-quiz1' && currentIndex >= shuffledQuestions25.length) || ($page.params.quizId === '50-item-quiz1' && currentIndex >= shuffledQuestions50.length))}
-			<div><img src="/goodjob.webp" alt="two beautiful girls" /></div>
+			<div class="grid place-items-center gap-10">
+				<p class="text-2xl">{randomCheer}</p>
+				<img src="/goodjob.webp" alt="two beautiful girls" />
+			</div>
 
 			<div class="text-center text-4xl">
 				<h2>Quiz Completed</h2>

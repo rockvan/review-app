@@ -8,7 +8,7 @@
 </script>
 
 <div
-	class="bg-white-800 grid w-fit gap-5 rounded-lg border-4 border-amber-400 p-5 text-lg shadow-lg shadow-amber-400/30"
+	class="grid w-fit gap-5 rounded-lg border-4 border-amber-400 bg-slate-800 p-5 text-lg shadow-lg shadow-amber-400/30"
 >
 	<div>
 		<h3 class="text-center font-bold">{title.toUpperCase().split('Z').join('Z-')}</h3>
@@ -21,13 +21,13 @@
 		{/each}
 	</div>
 	<div class="grid place-content-center gap-5 text-center sm:grid-flow-col">
-		<button class="rounded-full border-2 border-amber-400 px-2 py-1 font-bold drop-shadow-lg">
+		<button class="rounded-xl border-2 border-amber-400 px-2 py-1 font-bold drop-shadow-lg">
 			<a href="/quiz/10-item-{title}">10-Item Quiz</a>
 		</button>
-		<button class="rounded-full border-2 border-amber-400 px-2 py-1 font-bold drop-shadow-lg">
+		<button class="rounded-xl border-2 border-amber-400 px-2 py-1 font-bold drop-shadow-lg">
 			<a href="/quiz/25-item-{title}">25-Item Quiz</a>
 		</button>
-		<button class="rounded-full border-2 border-amber-400 px-2 py-1 font-bold drop-shadow-lg">
+		<button class="rounded-xl border-2 border-amber-400 px-2 py-1 font-bold drop-shadow-lg">
 			<a href="/quiz/50-item-{title}">50-Item Quiz</a>
 		</button>
 	</div>

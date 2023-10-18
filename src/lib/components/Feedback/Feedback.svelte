@@ -11,8 +11,22 @@
 		use:enhance
 		class="grid gap-5 rounded-lg border-4 border-amber-400 bg-amber-400 p-5 text-lg text-black sm:w-2/4"
 	>
-		<input id="username" type="text" name="username" placeholder="Username" class="p-2" required />
-		<input id="email" type="email" name="email" placeholder="Email" class="p-2" required />
+		<input
+			id="username"
+			type="text"
+			name="username"
+			placeholder="Username"
+			class="rounded-md p-2 shadow-lg"
+			required
+		/>
+		<input
+			id="email"
+			type="email"
+			name="email"
+			placeholder="Email"
+			class="rounded-md p-2 shadow-lg"
+			required
+		/>
 
 		<textarea
 			name="feedback"
@@ -20,6 +34,7 @@
 			cols="30"
 			rows="4"
 			placeholder="Feedback and Suggestion"
+			class="rounded-md p-2 shadow-lg"
 			required
 		/>
 		<button

@@ -4,6 +4,9 @@
 	import '../app.postcss';
 </script>
 
+<svelte:head>
+	<title>NCLEX QUIZ APP</title>
+</svelte:head>
 <Header />
 <slot />
 <Footer />
